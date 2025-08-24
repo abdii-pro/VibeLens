@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeLens</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='brain.png') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="main-card">
+                    <div class="card-header">
+                        <h1><i class="fas fa-brain mr-2"></i>VibeLens</h1>
+                        <p class="mb-0">Smart AI sentiment analysis powered by Hugging Face DistilBERT</p>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="section-title"><i class="fas fa-pen-alt mr-2"></i>Text Input</h3>
+                        <div class="form-group">
+                            <label class="form-label font-weight-bold">Enter text to analyze</label>
+                            <div class="input-group">
+                                <textarea class="form-control" id="textToAnalyze" rows="4" placeholder="Type your text here..."></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <button id="analyzeBtn" class="btn btn-primary">
+                                <i class="fas fa-play-circle mr-2"></i>Run Sentiment Analysis
+                            </button>
+                        </div>
+                        
+                        <div class="loading" id="loadingIndicator">
+                            <div class="spinner"></div>
+                            <p class="mt-2">Analyzing sentiment...</p>
+                        </div>
+                        
+                        <h3 class="section-title mt-5"><i class="fas fa-chart-line mr-2"></i>Analysis Results</h3>
+                        <div class="result-container" id="system_response">
+                            <div class="text-center text-muted">
+                                <i class="fas fa-chart-bar analysis-icon"></i>
+                                <p>Results will appear here after analysis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4" id="resultDetails" style="display: none;">
+                            <div class="d-flex justify-content-between">
+                                <span class="confidence-label">Confidence Score:</span>
+                                <span id="confidenceValue"></span>
+                            </div>
+                            <div class="score-bar mt-2">
+                                <div class="score-progress" id="scoreBar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <footer>
+                       <p>
+                          © 2025 Sentiment Analysis Tool | Developed by 
+                          <a href="https://github.com/abdii-pro" target="_blank">Abdullah Maqsood</a>
+                        </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/mywebscript.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+:root {
+    --primary: #4e73df;
+    --secondary: #6f42c1;
+    --success: #1cc88a;
+    --danger: #e74a3b;
+    --warning: #f6c23e;
+    --light: #f8f9fc;
+    --dark: #5a5c69;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-card {
+    border-radius: 15px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    overflow: hidden;
+    margin-top: 2rem;
+    background: white;
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-bottom: 0;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: 2px solid #e3e6f0;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.2);
+}
+
+.section-title {
+    color: var(--dark);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.result-container {
+    background: var(--light);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sentiment-positive {
+    color: var(--success);
+    font-weight: 700;
+}
+
+.sentiment-negative {
+    color: var(--danger);
+    font-weight: 700;
+}
+
+.sentiment-neutral {
+    color: var(--warning);
+    font-weight: 700;
+}
+
+.score-bar {
+    height: 10px;
+    border-radius: 5px;
+    background: #eaecf4;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.score-progress {
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+    transition: width 0.5s ease-in-out;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.analysis-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--dark);
+    font-size: 0.9rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--dark);
+    font-size: 1.2rem;
+}
+
+.emoji {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.result-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    margin-top: 20px;
+}
+
+.confidence-label {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.positive-bg {
+    background: linear-gradient(135deg, rgba(28, 200, 138, 0.1) 0%, rgba(28, 200, 138, 0.2) 100%);
+}
+
+.negative-bg {
+    background: linear-gradient(135deg, rgba(231, 74, 59, 0.1) 0%, rgba(231, 74, 59, 0.2) 100%);
+}
+
+.neutral-bg {
+    background: linear-gradient(135deg, rgba(246, 194, 62, 0.1) 0%, rgba(246, 194, 62, 0.2) 100%);
+}
+
+.alert {
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.alert-danger {
+    background-color: rgba(231, 74, 59, 0.1);
+    border: 1px solid rgba(231, 74, 59, 0.2);
+    color: #e74a3b;
+}
